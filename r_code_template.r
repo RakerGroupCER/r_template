@@ -11,12 +11,15 @@
 ################################################################################
 
 ### THIS SECTION IS FOR LOADING NECESSARY PACKAGES ###
+## Packages will be installed as well, if necessary.
 
-## Install packages (and dependencies) if necessary
-# install.packages("[INSERT]", dependencies = TRUE)
-
-## The "[INSERT]" package is used to [DESCRIBE]
-library ([INSERT])
+required_Packages_Install <- c("PCKG_NAME1", "PKG_NAME2")
+for(Package in required_Packages_Install){
+  if(!require(Package, character.only = TRUE)) { 
+      install.packages(Package, dependencies=TRUE)
+  }
+  library(Package, character.only = TRUE)
+}
 
 ################################################################################
 
